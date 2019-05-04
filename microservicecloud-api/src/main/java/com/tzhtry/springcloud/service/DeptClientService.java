@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import sun.awt.SunHints;
 
 import java.util.List;
-
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+//注意对类fallback工厂用fallbackFactory，对函数fallback方法用fallback
+@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory= DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
     @RequestMapping(value="/dept/add",method= RequestMethod.POST)

@@ -28,11 +28,11 @@ public class DeptController_Consumer {
     public List<Dept> list(){
         return this.service.list();
     }
-        //消费端调用服务发现,为什么feign不行
        @RequestMapping(value = "/consumer/dept/discovery")
     public Object discovery(){
         return this.service.discovery();
     }
+
 
     //没有用feign的版本：
 //    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
